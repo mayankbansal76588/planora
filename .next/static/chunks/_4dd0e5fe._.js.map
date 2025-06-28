@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/mayankbansal/Desktop/planora/components/auth-button.tsx"],"sourcesContent":["\"use client\";\n\nimport { useRouter } from \"next/navigation\";\nimport { login } from \"@/lib/auth-actions\";\n\ninterface AuthButtonProps {\n  isLoggedIn: boolean;\n  className?: string;\n  children?: React.ReactNode;\n}\n\nexport default function AuthButton({\n  isLoggedIn,\n  className,\n  children,\n}: AuthButtonProps) {\n  const router = useRouter();\n\n  const handleClick = async () => {\n    if (isLoggedIn) {\n      router.push(\"/trips\");\n    } else {\n      await login();\n    }\n  };\n\n  return (\n    <button onClick={handleClick} className={className}>\n      {children}\n    </button>\n  );\n}\n"],"names":[],"mappings":";;;;AAEA;AACA;;;AAHA;;;AAWe,SAAS,WAAW,EACjC,UAAU,EACV,SAAS,EACT,QAAQ,EACQ;;IAChB,MAAM,SAAS,CAAA,GAAA,qIAAA,CAAA,YAAS,AAAD;IAEvB,MAAM,cAAc;QAClB,IAAI,YAAY;YACd,OAAO,IAAI,CAAC;QACd,OAAO;YACL,MAAM,CAAA,GAAA,8IAAA,CAAA,QAAK,AAAD;QACZ;IACF;IAEA,qBACE,6LAAC;QAAO,SAAS;QAAa,WAAW;kBACtC;;;;;;AAGP;GApBwB;;QAKP,qIAAA,CAAA,YAAS;;;KALF","debugId":null}},
+    {"offset": {"line": 54, "column": 0}, "map": {"version":3,"sources":["file:///Users/mayankbansal/Desktop/planora/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0],"debugId":null}}]
+}
